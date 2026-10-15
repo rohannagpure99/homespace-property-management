@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "./App.css";
 import { getPropertyImage } from "./propertyImages";
 
-const API = "http://localhost:8080/api";
+const API = `${import.meta.env.VITE_API_URL || "http://localhost:8080"}/api`;
 const DEFAULT_IMAGE =
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80";
 
