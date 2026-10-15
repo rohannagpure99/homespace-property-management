@@ -1,0 +1,18 @@
+
+# React frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Spring Boot backend
+backend/target/
+backend/.env
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# VS Code settings
+.vscode/

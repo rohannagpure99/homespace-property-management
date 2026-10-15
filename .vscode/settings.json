@@ -1,0 +1,21 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Real Estate Database",
+            "database": "real_estate_db",
+            "username": "root"
+        }
+    ],
+    "java.jdt.ls.vmargs": "-Xms512m -Xmx4096m",
+    "java.compile.nullAnalysis.mode": "disabled"
+}

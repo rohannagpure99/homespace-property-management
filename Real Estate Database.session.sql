@@ -1,0 +1,1 @@
+SELECT * FROM real_estate_db.properties;
