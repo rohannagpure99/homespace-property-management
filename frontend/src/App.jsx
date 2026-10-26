@@ -96,10 +96,11 @@ function HomeSpace() {
   });
   const [properties, setProperties] = useState([]);
   const [owners, setOwners] = useState([]);
+  const [enquiries, setEnquiries] = useState([]);
+  const [siteVisits, setSiteVisits] = useState([]);
   const [stats, setStats] = useState({});
 
   const [propertyUnitPurposes, setPropertyUnitPurposes] = useState({});
-  
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
@@ -204,12 +205,26 @@ async function request(url, options = {}) {
   setLoading(true);
   setError("");
 
-  try {
-    const [propertyData, ownerData, statsData] = await Promise.all([
-      request(`${API}/properties`),
-      request(`${API}/owners`),
-      request(`${API}/dashboard/statistics`),
-    ]);
+    try {
+          const [
+          propertyData,
+          ownerData,
+          statsData,
+          enquiryData,
+          siteVisitData,
+        ] = await Promise.all([
+          request(`${API}/properties`),
+          request(`${API}/owners`),
+          request(`${API}/dashboard/statistics`),
+          request(`${API}/enquiries`).catch((err) => {
+            console.error("Failed to load enquiries:", err);
+            return [];
+          }),
+          request(`${API}/site-visits`).catch((err) => {
+            console.error("Failed to load site visits:", err);
+            return [];
+          }),
+        ]);
 
     // Determine which apartment properties have available flats for sale or rent.
     const purposeEntries = await Promise.all(
@@ -238,7 +253,7 @@ async function request(url, options = {}) {
     setPropertyUnitPurposes(Object.fromEntries(purposeEntries));
 
     console.log("Dashboard API properties:", propertyData);
-console.log("Total properties:", propertyData.length);
+    console.log("Total properties:", propertyData.length);
       setProperties((previousProperties) => {
         if (!previousProperties.length) {
           return propertyData;
@@ -264,6 +279,8 @@ console.log("Total properties:", propertyData.length);
       });
     setOwners(ownerData);
     setStats(statsData);
+    setEnquiries(Array.isArray(enquiryData) ? enquiryData : []);
+    setSiteVisits(Array.isArray(siteVisitData) ? siteVisitData : []);
   } catch (err) {
     setError(err.message || "Could not load data.");
   } finally {
@@ -937,7 +954,9 @@ if (selectedUnitProperty) {
         
               {page === "Reports" && (<Reports
                             properties={properties}
-                             owners={owners}/>)}
+                             owners={owners}
+                             enquiries={enquiries}
+                          siteVisits={siteVisits}/>)}
       </main>
 
       {showPropertyForm && (
