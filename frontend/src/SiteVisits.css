@@ -1,0 +1,706 @@
+
+/* ========================================
+   Site Visits Page
+======================================== */
+
+.site-visits-page {
+  width: 100%;
+  max-width: 1500px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 4px 0 28px;
+  color: #202b3c;
+}
+
+/* Page heading and description */
+
+.site-visits-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.site-visits-eyebrow {
+  margin: 0 0 7px;
+  color: #447cf5;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+}
+
+.site-visits-intro h1 {
+  margin: 0;
+  color: #172b4d;
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 750;
+}
+
+.site-visits-subtitle {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Primary action button */
+
+.site-visits-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 17px;
+  border: 1px solid #447cf5;
+  border-radius: 9px;
+  background: #447cf5;
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.site-visits-primary:hover:not(:disabled) {
+  background: #3267dc;
+}
+
+.site-visits-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Visit Statistics
+======================================== */
+
+.site-visits-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.site-visits-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(28, 48, 80, 0.035);
+}
+
+.site-stat-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.site-stat-icon.blue {
+  background: #edf3ff;
+  color: #447cf5;
+}
+
+.site-stat-icon.amber {
+  background: #fff6df;
+  color: #b7791f;
+}
+
+.site-stat-icon.green {
+  background: #e7f8ee;
+  color: #16834a;
+}
+
+.site-stat-icon.red {
+  background: #fff0f0;
+  color: #d14343;
+}
+
+.site-visits-stat p {
+  margin: 0 0 5px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.site-visits-stat strong {
+  color: #172b4d;
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+/* Success and information messages */
+
+.site-visits-feedback {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px 15px;
+  border: 1px solid #a7e4c7;
+  border-radius: 9px;
+  background: #ecfdf3;
+  color: #067647;
+  font-size: 13px;
+}
+
+.site-visits-feedback button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ========================================
+   Visits Table and Toolbar
+======================================== */
+
+.site-visits-table-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(28, 48, 80, 0.035);
+}
+
+.site-visits-table-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.site-visits-table-heading h2 {
+  margin: 0;
+  color: #172b4d;
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.site-visits-table-heading p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.site-visits-count {
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: #edf3ff;
+  color: #285ed4;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Search field and status filter */
+
+.site-visits-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.site-visits-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+  min-width: 0;
+  height: 44px;
+  padding: 0 13px;
+  border: 1px solid #dce3ed;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #64748b;
+}
+
+.site-visits-search span {
+  font-size: 23px;
+}
+
+.site-visits-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #202b3c;
+  font: inherit;
+  font-size: 13px;
+}
+
+.site-visits-toolbar > select {
+  width: 165px;
+  max-width: 45%;
+  height: 44px;
+  padding: 0 10px;
+  border: 1px solid #dce3ed;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #34445b;
+  font: inherit;
+  font-size: 13px;
+}
+
+/* Table scrolling on smaller screens */
+
+.site-visits-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.site-visits-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.site-visits-table th {
+  padding: 13px 12px;
+  border-bottom: 1px solid #dce3ed;
+  background: #f8faff;
+  color: #68758b;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-visits-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #edf0f5;
+  color: #354257;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.site-visits-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.site-visitor-name {
+  color: #172b4d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-visitor-contact,
+.site-visit-id,
+.site-visit-time {
+  display: block;
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+/* Visit purpose and status */
+
+.site-visit-purpose {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.site-visit-status {
+  max-width: 135px;
+  padding: 7px 8px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.site-visit-status.status-scheduled {
+  background: #fff6df;
+  color: #946200;
+}
+
+.site-visit-status.status-completed {
+  background: #e7f8ee;
+  color: #16834a;
+}
+
+.site-visit-status.status-cancelled {
+  background: #fff0f0;
+  color: #c62828;
+}
+
+.site-visit-status.status-rescheduled {
+  background: #edf3ff;
+  color: #285ed4;
+}
+
+/* Row action buttons */
+
+.site-visit-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.site-visit-actions button {
+  padding: 7px 9px;
+  border: 1px solid #cbd8f5;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #285ed4;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.site-visit-actions button.delete {
+  border-color: #fecaca;
+  color: #c62828;
+}
+
+/* Empty table state */
+
+.site-visits-empty {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 44px 16px;
+  text-align: center;
+}
+
+.site-visits-empty > span {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 16px;
+  background: #edf3ff;
+  color: #447cf5;
+  font-size: 27px;
+}
+
+.site-visits-empty h3 {
+  margin: 8px 0 0;
+  color: #172b4d;
+  font-size: 17px;
+}
+
+.site-visits-empty p {
+  max-width: 420px;
+  margin: 0 0 8px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.site-visits-storage-note {
+  margin: 12px 2px 0;
+  color: #8490a2;
+  font-size: 11px;
+}
+
+/* ========================================
+   Schedule / Edit Visit Modal
+======================================== */
+
+.site-visit-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.site-visit-modal {
+  width: 100%;
+  max-width: 760px;
+  max-height: calc(100vh - 36px);
+  overflow-y: auto;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+}
+
+.site-visit-modal-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.site-visit-modal-heading h2 {
+  margin: 0;
+  color: #172b4d;
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.site-visit-modal-heading p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.site-visit-close {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Visit form fields */
+
+.site-visit-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.site-visit-form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  color: #34445b;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.site-visit-form input,
+.site-visit-form select,
+.site-visit-form textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  padding: 10px 11px;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #202b3c;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.site-visit-form textarea {
+  resize: vertical;
+}
+
+.site-visit-form input:focus,
+.site-visit-form select:focus,
+.site-visit-form textarea:focus {
+  outline: 0;
+  border-color: #447cf5;
+  box-shadow: 0 0 0 3px rgba(68, 124, 245, 0.12);
+}
+
+.site-visit-notes {
+  grid-column: 1 / -1;
+}
+
+/* Modal buttons */
+
+.site-visit-form-actions {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 7px;
+}
+
+.site-visit-secondary {
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 1px solid #dce3ed;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #475569;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.site-visit-warning {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff7e6;
+  color: #946200;
+  font-size: 12px;
+}
+
+/* ========================================
+   Tablet Layout
+======================================== */
+
+@media (max-width: 1050px) {
+  .site-visits-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-visits-table-card {
+    padding: 17px;
+  }
+}
+
+/* ========================================
+   Mobile Layout
+======================================== */
+
+@media (max-width: 600px) {
+  .site-visits-page {
+    padding-top: 0;
+  }
+
+  .site-visits-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 18px;
+  }
+
+  .site-visits-intro .site-visits-primary {
+    width: 100%;
+  }
+
+  .site-visits-stats {
+    gap: 9px;
+    margin-bottom: 16px;
+  }
+
+  .site-visits-stat {
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .site-stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+
+  .site-visits-stat p {
+    font-size: 11px;
+  }
+
+  .site-visits-stat strong {
+    font-size: 22px;
+  }
+
+  .site-visits-table-card {
+    padding: 14px 10px;
+  }
+
+  .site-visits-table-heading {
+    align-items: flex-start;
+  }
+
+  .site-visits-table-heading h2 {
+    font-size: 18px;
+  }
+
+  .site-visits-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .site-visits-toolbar > select {
+    width: 100%;
+    max-width: none;
+  }
+
+  .site-visit-modal-backdrop {
+    padding: 10px;
+  }
+
+  .site-visit-modal {
+    max-height: calc(100vh - 20px);
+    padding: 18px;
+  }
+
+  .site-visit-form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .site-visit-notes,
+  .site-visit-form-actions,
+  .site-visit-warning {
+    grid-column: auto;
+  }
+
+  .site-visit-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .site-visit-form-actions button {
+    width: 100%;
+  }
+}
+
+
+
+/* Date and time picker fields */
+.site-visit-form input[type="date"],
+.site-visit-form input[type="time"] {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #d6dfed;
+  border-radius: 11px;
+  background-color: #ffffff;
+  color: #26364f;
+  font-family: inherit;
+  font-size: 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.site-visit-form input[type="date"]:focus,
+.site-visit-form input[type="time"]:focus {
+  outline: none;
+  border-color: #477bff;
+  box-shadow: 0 0 0 3px rgba(71, 123, 255, 0.14);
+}
+
+/* Keep the calendar and clock icons visible */
+.site-visit-form input[type="date"]::-webkit-calendar-picker-indicator,
+.site-visit-form input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.85;
+}

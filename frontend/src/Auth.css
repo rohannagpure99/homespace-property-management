@@ -1,0 +1,556 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   FULL-SCREEN BACKGROUND
+========================= */
+
+.auth-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  overflow-y: auto;
+
+  background:
+    linear-gradient(
+      rgba(5, 15, 40, 0.25),
+      rgba(5, 15, 40, 0.38)
+    ),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=90")
+      center center / cover no-repeat;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  margin: auto;
+  padding: 28px 30px;
+
+  color: #ffffff;
+  text-align: center;
+
+  background: rgba(20, 38, 70, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 22px;
+
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+/* =========================
+   BUILDING LOGO
+========================= */
+
+.auth-building {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
+
+  font-size: 36px;
+  line-height: 1;
+
+  filter: drop-shadow(
+    0 4px 10px rgba(59, 130, 246, 0.35)
+  );
+}
+
+/* =========================
+   BRAND NAME
+========================= */
+
+.auth-card h1 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 38px);
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+
+/* BRAND SUBTITLE */
+
+.auth-subtitle {
+  margin: 8px 0 0;
+
+  color: #d6e3f7;
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+/* =========================
+   WELCOME HEADING
+========================= */
+
+.auth-card h2 {
+  margin: 22px 0 6px;
+
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+/* SUPPORTING TEXT */
+
+.auth-card > p:not(.auth-subtitle):not(.auth-footer):not(.auth-message):not(.auth-signup) {
+  margin: 0 0 16px;
+
+  color: #dbe7f8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================
+   LOGIN FORM
+========================= */
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  text-align: left;
+}
+
+.auth-card label {
+  color: #f1f5f9;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.auth-card input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.10);
+
+  border: 1px solid rgba(226, 232, 240, 0.55);
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.auth-card input::placeholder {
+  color: #cbd5e1;
+}
+
+.auth-card input:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 1px;
+  border-color: #60a5fa;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+/* =========================
+   PASSWORD VISIBILITY BUTTON
+========================= */
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.password-wrapper input {
+  padding-right: 48px;
+}
+
+.auth-card .password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  transform: translateY(-50%);
+
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: transparent;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-card .password-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   SIGN IN BUTTON
+========================= */
+
+.auth-card form > button[type="submit"] {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 12px;
+
+  color: #ffffff;
+  background: linear-gradient(
+    100deg,
+    #38bdf8,
+    #1765ff
+  );
+
+  border: 1px solid rgba(125, 211, 252, 0.7);
+  border-radius: 10px;
+
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.auth-card form > button[type="submit"]:hover {
+  background: linear-gradient(
+    100deg,
+    #0ea5e9,
+    #1d4ed8
+  );
+
+  transform: translateY(-1px);
+}
+
+/* DISABLED BUTTON */
+
+.auth-card button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================
+   FORGOT PASSWORD BUTTON
+========================= */
+
+.auth-card .auth-link {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+
+  margin-top: 2px;
+  padding: 11px;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.auth-card .auth-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* =========================
+   SIGN-UP TEXT LINK
+========================= */
+
+.auth-signup {
+  margin: 20px 0 0;
+
+  color: #d6e3f7;
+  text-align: center;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.auth-signup button {
+  display: inline;
+
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+
+  color: #7dd3fc;
+  background: transparent;
+
+  border: none;
+  border-radius: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.auth-signup button:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.auth-footer {
+  margin: 18px 0 0;
+
+  color: #cbdcf4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================
+   ERROR / STATUS MESSAGE
+========================= */
+
+.auth-message {
+  color: #fecaca;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 520px) {
+  .auth-page {
+    padding: 16px 12px;
+  }
+
+  .auth-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 24px 20px;
+
+    border-radius: 18px;
+  }
+
+  .auth-card h1 {
+    font-size: 32px;
+  }
+
+  .auth-card h2 {
+    margin-top: 20px;
+    font-size: 21px;
+  }
+
+  .auth-signup {
+    margin-top: 18px;
+  }
+}
+
+/* SHORT SCREEN SUPPORT*/
+
+@media (max-height: 700px) {
+  .auth-page {
+    align-items: flex-start;
+  }
+
+  .auth-card {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Registration page */
+
+.register-card {
+  max-width: 560px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.register-card .auth-building,
+.register-card h1,
+.register-card .auth-subtitle,
+.register-card > h2,
+.register-card > p:not(.auth-message):not(.auth-footer):not(.auth-signup) {
+  text-align: center;
+}
+
+.register-card .register-section-title {
+  margin: 22px 0 8px;
+  padding-bottom: 8px;
+  color: #7dd3fc;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.register-card form {
+  gap: 10px;
+}
+
+.register-card select,
+.register-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(226, 232, 240, 0.55);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.register-card select {
+  min-height: 46px;
+}
+
+.register-card select option {
+  color: #172554;
+  background: #fff;
+}
+
+.register-card textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.register-card input[type="file"] {
+  min-height: auto;
+  padding: 10px;
+}
+
+.register-card input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.register-choice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.register-choice-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.register-choice-option input[type="radio"] {
+  width: 17px;
+  min-height: 17px;
+  flex-shrink: 0;
+  accent-color: #38bdf8;
+}
+
+.register-choice-option span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.register-choice-option strong {
+  color: #fff;
+  font-size: 13px;
+}
+
+.register-choice-option small {
+  color: #cbdcf4;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.register-file-list {
+  margin: 0;
+  color: #bae6fd;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.register-card .auth-signup {
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .register-card {
+    max-width: 100%;
+    padding: 24px 18px;
+  }
+
+  .register-choice {
+    grid-template-columns: 1fr;
+  }
+}

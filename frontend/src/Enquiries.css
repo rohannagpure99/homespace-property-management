@@ -1,0 +1,460 @@
+
+/* Main enquiries page */
+.enquiry-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 24px 28px 40px;
+  color: #172944;
+}
+
+/* Top banner */
+.enquiry-banner {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 850px;
+  min-height: 280px;
+  overflow: hidden;
+  margin: 0 auto 24px;
+  padding: 28px 34px;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #142640, #203e67);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(22, 42, 71, 0.12);
+}
+
+/* HomeSpace logo and name */
+.enquiry-brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.enquiry-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #477cf6;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.enquiry-brand h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.enquiry-brand p {
+  margin: 4px 0 0;
+  color: #cbd8ee;
+  font-size: 12px;
+}
+
+/* Banner heading and description */
+.enquiry-banner-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin-top: 24px;
+}
+
+.enquiry-eyebrow {
+  color: #a9c4ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.enquiry-banner-content h1 {
+  margin: 10px 0 12px;
+  font-size: clamp(27px, 2.5vw, 36px);
+  line-height: 1.2;
+}
+
+.enquiry-banner-content > p {
+  max-width: 560px;
+  margin: 0;
+  color: #d7e1f1;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Trust message */
+.enquiry-trust {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  color: #e1eaff;
+  font-size: 13px;
+}
+
+.enquiry-trust span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #2d9d77;
+  color: #fff;
+}
+
+/* Decorative house illustration */
+.enquiry-banner-decoration {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.decoration-house {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 150px;
+  line-height: 1;
+}
+
+.decoration-circle {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #477cf6;
+  opacity: 0.65;
+}
+
+/* White enquiry form card */
+.enquiry-form-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px 34px;
+  border: 1px solid #e3e9f3;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(30, 52, 85, 0.08);
+}
+
+/* Form title */
+.enquiry-form-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.enquiry-heading-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #edf3ff;
+  color: #3977f6;
+  font-size: 22px;
+}
+
+.enquiry-form-heading h2 {
+  margin: 0;
+  color: #172944;
+  font-size: 23px;
+  line-height: 1.35;
+}
+
+.enquiry-form-heading p {
+  margin: 6px 0 0;
+  color: #758196;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Form field layout */
+.enquiry-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+
+.enquiry-full-width {
+  grid-column: 1 / -1;
+}
+
+.enquiry-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+
+.enquiry-field label {
+  display: block;
+  margin: 0;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.enquiry-field label span {
+  color: #8792a5;
+  font-weight: 400;
+}
+
+/* Input boxes and message area */
+.enquiry-field input,
+.enquiry-field textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid #d9e1ed;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #172944;
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.enquiry-field input {
+  height: 46px;
+  min-height: 46px;
+}
+
+.enquiry-field textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.enquiry-field input::placeholder,
+.enquiry-field textarea::placeholder {
+  color: #a0a9b8;
+}
+
+.enquiry-field input:focus,
+.enquiry-field textarea:focus {
+  border-color: #477cf6;
+  box-shadow: 0 0 0 3px rgba(71, 124, 246, 0.12);
+}
+
+/* Buy, rent, commercial and PG options */
+.enquiry-type-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.enquiry-type-option {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 46px;
+  padding: 9px 7px;
+  border: 1px solid #d9e1ed;
+  border-radius: 10px;
+  background: #fff;
+  color: #475467;
+  font: inherit;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.enquiry-type-option:hover {
+  border-color: #8baaff;
+  background: #f7f9ff;
+}
+
+.enquiry-type-option.selected {
+  border-color: #477cf6;
+  background: #edf3ff;
+  color: #285ed4;
+  box-shadow: 0 0 0 1px #477cf6;
+}
+
+.enquiry-option-icon {
+  font-size: 20px;
+}
+
+/* Message character count */
+.enquiry-character-count {
+  display: block;
+  align-self: flex-end;
+  margin-top: -4px;
+  color: #8792a5;
+  font-size: 11px;
+  text-align: right;
+}
+
+/* Success and error messages */
+.enquiry-feedback {
+  margin-top: 20px;
+  padding: 13px 15px;
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.enquiry-feedback.success {
+  border: 1px solid #a7e4c7;
+  background: #ecfdf3;
+  color: #067647;
+}
+
+.enquiry-feedback.error {
+  border: 1px solid #fecdca;
+  background: #fef3f2;
+  color: #b42318;
+}
+
+/* Form footer and submit button */
+.enquiry-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #edf0f5;
+}
+
+.enquiry-form-footer p {
+  margin: 0;
+  color: #758196;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.enquiry-submit-button {
+  min-width: 165px;
+  min-height: 46px;
+  padding: 0 25px;
+  border: none;
+  border-radius: 9px;
+  background: #3977f6;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.enquiry-submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #285ed4;
+}
+
+.enquiry-submit-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+  .enquiry-page {
+    padding: 18px;
+  }
+
+  .enquiry-banner,
+  .enquiry-form-card {
+    padding: 24px;
+  }
+
+  .enquiry-banner-decoration {
+    right: -100px;
+    opacity: 0.6;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .enquiry-page {
+    padding: 14px 10px 28px;
+  }
+
+  .enquiry-banner {
+    min-height: auto;
+    margin-bottom: 16px;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .enquiry-banner-content {
+    margin-top: 16px;
+  }
+
+  .enquiry-banner-content h1 {
+    font-size: 25px;
+  }
+
+  .enquiry-banner-decoration {
+    display: none;
+  }
+
+  .enquiry-form-card {
+    padding: 20px 16px;
+    border-radius: 15px;
+  }
+
+  .enquiry-form-heading {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .enquiry-form-heading h2 {
+    font-size: 19px;
+  }
+
+  .enquiry-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .enquiry-full-width {
+    grid-column: 1 / -1;
+  }
+
+  .enquiry-type-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .enquiry-form-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .enquiry-submit-button {
+    width: 100%;
+  }
+}
